@@ -17,6 +17,17 @@ RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - && \
 COPY scripts/nvim_install.sh /root/nvim_install.sh
 RUN chmod +x /root/nvim_install.sh && /root/nvim_install.sh
 
+
+# Copy scripts/sipp.sh and run it
+COPY scripts/sipp.sh /root/sipp.sh
+RUN chmod +x /root/sipp.sh && /root/sipp.sh
+
+
+# Copy scripts/sngrep.sh and run it
+COPY scripts/sngrep.sh /root/sngrep.sh
+RUN chmod +x /root/sngrep.sh && /root/sngrep.sh
+
+
 # Clone nvim configfile
 RUN git clone https://github.com/raushanraja/nvimdot ~/.config/nvim
 
